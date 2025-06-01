@@ -31,3 +31,47 @@ int num;
         }
         Console.WriteLine("su numero invertido: " + invertido);
     }
+    Console.WriteLine ("Ingrese el num operacion que quiere 1:suma 2:resta 3:multiplicacion 4:division");
+        int operacion;
+        operacion = int.Parse(Console.ReadLine());
+        
+        Console.WriteLine("ingrese un numero");
+        int num1;
+        num1 = int.Parse(Console.ReadLine());
+        
+        Console.WriteLine("ingrese otro numero");
+        int num2;
+        num2 = int.Parse(Console.ReadLine());
+        
+        switch(operacion){
+            case 1:suma(num1,num2);
+            break;
+            case 2:resta(num1,num2);
+            break;
+            case 3:multiplica(num1,num2);
+            break;
+            case 4: dividir((double) num1,(double) num2);
+            break;
+        }
+        
+    
+    static void suma(int a,int b){
+        int resul = a+b;
+        Console.WriteLine(""+resul);
+    }
+    static void resta(int a,int b){
+        int resul = a-b;
+        Console.WriteLine(""+resul);
+    }
+    static void multiplica(int a,int b){
+        int resul = a*b;
+        Console.WriteLine(""+resul);
+    } 
+    static void dividir(double a,double b){
+        if(b == 0){
+            Console.WriteLine("error no se puede dividir por 0");
+            return;
+        }
+        double resul = a/b;
+        Console.WriteLine(""+resul);
+    }
