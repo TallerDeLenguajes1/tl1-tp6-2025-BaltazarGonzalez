@@ -31,6 +31,10 @@ int num;
         }
         Console.WriteLine("su numero invertido: " + invertido);
     }
+    
+    Calculadora();
+
+    static void Calculadora(){
     Console.WriteLine ("Ingrese el num operacion que quiere 1:suma 2:resta 3:multiplicacion 4:division");
         int operacion;
         operacion = int.Parse(Console.ReadLine());
@@ -54,7 +58,7 @@ int num;
             break;
         }
         
-    
+    }
     static void suma(int a,int b){
         int resul = a+b;
         Console.WriteLine(""+resul);
