@@ -2,7 +2,7 @@
 Console.WriteLine("Hello, World!");
 int num;
         string entrada;
-        Console.WriteLine("ingrese su numero");
+        Console.WriteLine("ingrese su numero para invertilo");
         entrada = Console.ReadLine();
         bool chequeo = false;
         
@@ -35,41 +35,72 @@ int num;
     Calculadora();
 
     static void Calculadora(){
-    Console.WriteLine ("Ingrese el num operacion que quiere 1:suma 2:resta 3:multiplicacion 4:division");
-        int operacion;
-        operacion = int.Parse(Console.ReadLine());
+        int continuar=1;
+
+        while (continuar == 1)
+        {
+             Console.WriteLine ("Ingrese el num operacion que quiere 1:suma 2:resta 3:multiplicacion 4:division");
+            int operacion;
+            operacion = int.Parse(Console.ReadLine());
+            string aux1;
+            double num1;
+
+            while (true)
+            {
+                Console.WriteLine("ingrese un numero");
+                aux1 = Console.ReadLine();
+                if(double.TryParse(aux1, out num1)){//Intenta convertir a double
+                    Console.WriteLine("numero valido");
+                    break;//sale del bucle 
+                }else
+                {
+                    Console.WriteLine("numero invalido");
+                }
+            }
         
-        Console.WriteLine("ingrese un numero");
-        int num1;
-        num1 = int.Parse(Console.ReadLine());
+            string aux2;
+            double num2;
         
-        Console.WriteLine("ingrese otro numero");
-        int num2;
-        num2 = int.Parse(Console.ReadLine());
+            while (true)
+            {
+                Console.WriteLine("ingrese otro numero");
+                aux2 = Console.ReadLine();
+                if(double.TryParse(aux2, out num2)){
+                    Console.WriteLine("numero valido");
+                    break;
+                }else
+                {
+                    Console.WriteLine("numero invalido");
+                }
+            }
         
-        switch(operacion){
-            case 1:suma(num1,num2);
-            break;
-            case 2:resta(num1,num2);
-            break;
-            case 3:multiplica(num1,num2);
-            break;
-            case 4: dividir((double) num1,(double) num2);
-            break;
+        
+            switch(operacion){
+             case 1:suma(num1,num2);
+                break;
+                case 2:resta(num1,num2);
+                break;
+                case 3:multiplica(num1,num2);
+                break;
+                case 4: dividir( num1, num2);
+                break;
+            }
+            Console.WriteLine("desea hacer seguir calculando 1:si 0:no");
+            continuar = int.Parse(Console.ReadLine());    
         }
-        
+       
     }
-    static void suma(int a,int b){
-        int resul = a+b;
-        Console.WriteLine(""+resul);
+    static void suma(double a,double b){
+        double resul = a+b;
+        Console.WriteLine("resultado:"+resul);
     }
-    static void resta(int a,int b){
-        int resul = a-b;
-        Console.WriteLine(""+resul);
+    static void resta(double a,double b){
+        double resul = a-b;
+        Console.WriteLine("resultado:"+resul);
     }
-    static void multiplica(int a,int b){
-        int resul = a*b;
-        Console.WriteLine(""+resul);
+    static void multiplica(double a,double b){
+        double resul = a*b;
+        Console.WriteLine("resultado:"+resul);
     } 
     static void dividir(double a,double b){
         if(b == 0){
@@ -77,5 +108,5 @@ int num;
             return;
         }
         double resul = a/b;
-        Console.WriteLine(""+resul);
+        Console.WriteLine("resultado:"+resul);
     }
