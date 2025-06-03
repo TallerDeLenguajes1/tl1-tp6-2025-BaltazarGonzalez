@@ -1,6 +1,9 @@
 ﻿// See https://aka.ms/new-console-template for more information
+using System.ComponentModel.DataAnnotations;
+
 Console.WriteLine("Hello, World!");
-int num;
+//PUNTO1
+/*        int num;
         string entrada;
         Console.WriteLine("ingrese su numero para invertilo");
         entrada = Console.ReadLine();
@@ -30,9 +33,9 @@ int num;
             num = num/10;
         }
         Console.WriteLine("su numero invertido: " + invertido);
-    }                
-
-    Calculadora();
+    }*/                
+    //PUNTO2
+   /* Calculadora();
 
     static void Calculadora(){
         int continuar=1;
@@ -85,6 +88,8 @@ int num;
                 case 4: dividir( num1, num2);
                 break;
             }
+            //PUNTO 3
+            
             Console.WriteLine("ingrese la operacion 1:valAbs 2:cuadrado 3:raiz 4:seno 5:coseno  6:ver parte entera");
             operacion = int.Parse(Console.ReadLine());
 
@@ -144,7 +149,7 @@ int num;
                 }
             }
             minYmax(num4,num5);
-
+            
 
             Console.WriteLine("desea hacer seguir calculando 1:si 0:no");
             continuar = int.Parse(Console.ReadLine());    
@@ -206,4 +211,55 @@ int num;
         {
             Console.WriteLine("maximo:"+b+",minimo: "+a);
         }
+    }*/
+    //Punto 4
+    string cadena;
+    Console.WriteLine("ingrese la primera cadena");
+    cadena = Console.ReadLine();
+    int tam;
+    tam = cadena.Length;
+    Console.WriteLine("el tamaño de la cadena es:" +tam+" caracteres");
+    
+    string cadena2;
+    Console.WriteLine("ingrese otra cadena");
+    cadena2 = Console.ReadLine();
+    string concatenado = string.Concat(cadena,cadena2);
+    Console.WriteLine("concatenadas: "+concatenado);
+
+    string subcadena;
+    subcadena = cadena.Substring(0,3);//toma desde 0 a 3 ,Substring(3)desde 3 en adelante
+    Console.WriteLine("subcadena:" +subcadena);
+
+    Console.WriteLine("foreach:");
+    foreach (char a in cadena)
+    {
+        Console.WriteLine(a);
     }
+
+    if (concatenado.Contains("hola"))
+    {
+        Console.WriteLine("la cadena tiene la palabra hola");
+    }else
+    {
+        Console.WriteLine("la cadena no tiene la palabra hola");
+    }
+
+    string mayus = cadena.ToUpper();
+    string minus = cadena.ToLower();
+    Console.WriteLine("mayuscula: "+mayus+" miniscula: "+minus);
+
+    Console.WriteLine("Split:");
+    string texto="mango+pera+sandia";
+    string []comida = texto.Split("+");
+    foreach (string a in comida)
+    {
+        Console.WriteLine(a);
+    }
+
+    Console.WriteLine("ingrese num1+num2");
+    string sumar= Console.ReadLine();
+    string[] valores = sumar.Split("+");
+    double total;
+    total = double.Parse(valores[0]) + double.Parse(valores[1]);
+    Console.WriteLine("resultado:"+total);
+    
